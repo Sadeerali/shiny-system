@@ -1,0 +1,194 @@
+1) SELECT * FROM Stock
+
+
+ STOCK_NUM MANU_ DESCRIPTION     UNIT_PRICE UNIT UNIT_DESCR     
+---------- ----- --------------- ---------- ---- ---------------
+        10 HROOO baseball gloves        250 case 10 gloves/case 
+        11 HSKKO baseball gloves        800 case 10 gloves/case 
+        12 SMTTO baseball gloves        450 case 10 gloves/case 
+        20 HROOO baseball               126 case 24/case        
+        30 HSKKO baseball bat           240 case 12/case        
+        40 HSKKO football               960 case 24/case        
+        41 HROOO football               480 case 24/case        
+        50 NRGGO tennis racquet          28 each each           
+        51 SMTTO tennis racquet          25 each each           
+        52 ANZZO tennis racquet        19.8 each each           
+        60 SMTTO tennis ball             36 case 24 cans/case   
+
+ STOCK_NUM MANU_ DESCRIPTION     UNIT_PRICE UNIT UNIT_DESCR     
+---------- ----- --------------- ---------- ---- ---------------
+        61 ANZZO tennis balls            48 case 24 cans/case   
+        70 HROOO basketball             600 case 24/case        
+        80 ANZZO volleyball             840 case 24/case        
+        90 ANZZO volleyball net          20 each each           
+
+15 rows selected.
+
+
+2) SELECT lname, fname, company from customer
+
+LNAME           FNAME           COMPANY             
+--------------- --------------- --------------------
+Paul            Ludwig          All Sports Supplies 
+Sadler          Carole          Sports Spots        
+Currie          Phillip         Phil's Sports       
+Higgin          Anthony         Play Ball!          
+Vector          Raymond         Los Altos Sports    
+Watson          George          Watson and Son      
+Ream            Charles         Athletic Supplies   
+Quinn           Donald          Quinn's Sports      
+Miller          Jane            Sport Stuff         
+Jaeger          Roy             AA athletics        
+Keyes           Frances         Sports Center       
+
+LNAME           FNAME           COMPANY             
+--------------- --------------- --------------------
+Lawson          Margaret        Runners and Others  
+Beatty          Lana            Sportstown          
+Albertson       Frank           Sporting Place      
+Grant           Alfred          Gold Medal Sports   
+Parmelee        Jean            Olympic City        
+Sipes           Arnold          Kids Korner         
+Baxter          Dick            Blue Ribbon Sports  
+
+18 rows selected. 
+
+
+3) SELECT Company FROM Customer
+   WHERE city = 'Sun' or city = 'Red City' or city = 'San Francisco'
+
+COMPANY             
+--------------------
+All Sports Supplies
+Sports Spots
+Play Ball!
+Quinn's Sports
+Sport Stuff
+AA athletics
+Sports Center
+Sporting Place
+Kids Korner
+
+9 rows selected. 
+
+4) SELECT order_num,order_date,customer_num,ship_date,paid_date
+    FROM orders
+    WHERE order_date BETWEEN '31-DEC-2019' and '03-JAN-2020' 
+
+
+ ORDER_NUM ORDER_DAT CUSTOMER_NUM SHIP_DATE PAID_DATE
+---------- --------- ------------ --------- ---------
+      1110 31-DEC-19         1040 02-JAN-20 13-JAN-20
+      1120 31-DEC-19         1170 05-JAN-20          
+      1130 03-JAN-20         1040 08-JAN-20 17-JAN-20
+      1140 31-DEC-19         1060 04-JAN-20 16-JAN-20
+      1150 03-JAN-20         1100 08-JAN-20 24-JAN-20
+
+
+5) SELECT order_num, order_date, ship_charge FROM orders
+  WHERE backlog = 'n' and ship_charge > 15
+
+
+ ORDER_NUM ORDER_DAT SHIP_CHARGE
+---------- --------- -----------
+      1020 20-DEC-19        15.3
+      1050 30-DEC-19        16.2
+      1070 30-DEC-19        25.2
+
+
+6) SELECT stock_num FROM stock
+  WHERE description LIKE 'baseball%' AND unit_price > 200 and manu_code LIKE 'H%'
+
+ STOCK_NUM
+----------
+        10
+        11
+        30
+
+
+7) SELECT DISTINCT company FROM customer, orders
+  WHERE customer.customer_num = orders.customer_num
+
+COMPANY             
+--------------------
+AA athletics
+Olympic City
+Runners and Others
+All Sports Supplies
+Watson and Son
+Gold Medal Sports
+Sports Center
+Kids Korner
+Play Ball!
+
+9 rows selected.
+
+
+8) SELECT DISTINCT customer.customer_num, description FROM customer, orders, items, stock
+WHERE customer.customer_num BETWEEN 1040 AND 1080
+AND orders.customer_num = customer.customer_num
+AND orders.order_num = items.order_num
+ORDER BY customer_num, description
+
+
+CUSTOMER_NUM DESCRIPTION    
+------------ ---------------
+        1040 baseball       
+        1040 baseball bat   
+        1040 baseball gloves
+        1040 basketball     
+        1040 football       
+        1040 tennis ball    
+        1040 tennis balls   
+        1040 tennis racquet 
+        1040 volleyball     
+        1040 volleyball net 
+        1060 baseball       
+
+CUSTOMER_NUM DESCRIPTION    
+------------ ---------------
+        1060 baseball bat   
+        1060 baseball gloves
+        1060 basketball     
+        1060 football       
+        1060 tennis ball    
+        1060 tennis balls   
+        1060 tennis racquet 
+        1060 volleyball     
+        1060 volleyball net 
+
+20 rows selected. 
+
+
+9) SELECT COUNT (DISTINCT customer_num) AS Total_Customers_with_Orders
+    FROM orders
+
+TOTAL_CUSTOMERS_WITH_ORDERS
+---------------------------
+                          9
+
+
+10) SELECT orders.customer_num, COUNT (DISTINCT orders.order_num) "Order Count", SUM (items.quantity) "Item Quantity", SUM (items.total_price) "Total Price"
+    FROM orders JOIN items ON orders.order_num = items.order_num
+    GROUP BY customer_num
+    ORDER BY customer_num
+
+
+CUSTOMER_NUM Order Count Item Quantity Total Price
+------------ ----------- ------------- -----------
+        1010           1             2        1200
+        1040           3            17      1201.8
+        1060           2             6        3566
+        1100           2             7        1390
+        1110           1             1         450
+        1120           1            17         498
+        1160           1            22         562
+        1170           2            16        2736
+
+8 rows selected. 
+
+
+
+
+
+
