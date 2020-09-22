@@ -1,0 +1,175 @@
+# Program combat
+# Description:
+#   Game programming that tell the game what to do exactly to make it work.
+# Author: Sadeer Ali
+# Data: 14 September 2020
+# Revised:
+#   21 September 2020
+
+# list libraries used
+
+
+# declaring variables with value 0
+red_strength = 0
+red_energy = 0
+red_speed = 0
+blue_strength = 0
+blue_energy = 0
+blue_speed = 0
+
+field_red = 0
+field_blue = 0
+
+time = 0
+
+#assigning setup values to the players
+red_strength = 45
+red_energy = 100
+red_speed = 3
+blue_strength = 80
+blue_energy = 150
+blue_speed = 5
+
+
+print ("Time is",time)
+print ("Red strength is {}, energy is {}, speed is {}, location is {}.".format(red_strength, red_energy, red_speed, field_red))
+print ("Blue strength is {}, energy is {}, speed is {}, location is {}.\n".format(blue_strength, blue_energy, blue_speed, field_blue))
+
+# add one to time
+time = time + 1
+
+# add the speed of each warrior to its location
+field_red = field_red + red_speed 
+field_blue = field_blue + blue_speed
+
+#subtract the square of each warrior’s speed from its energy
+red_energy = red_energy - (red_speed ** 2)
+blue_energy = blue_energy - (blue_speed ** 2)
+
+#subtract twice the warrior’s speed from its strength
+red_strength = red_strength - (2 * red_speed)
+blue_strength = blue_strength - (2 * blue_speed)
+
+
+print ("Time is",time)
+print ("Red strength is {}, energy is {}, speed is {}, location is {}.".format(red_strength, red_energy, red_speed, field_red))
+print ("Blue strength is {}, energy is {}, speed is {}, location is {}.\n".format(blue_strength, blue_energy, blue_speed, field_blue))
+
+# add one to time
+time = time + 1
+
+# add the speed of each warrior to its location
+field_red = field_red + red_speed 
+field_blue = field_blue + blue_speed
+
+#subtract the square of each warrior’s speed from its energy
+red_energy = red_energy - (red_speed ** 2)
+blue_energy = blue_energy - (blue_speed ** 2)
+
+#subtract twice the warrior’s speed from its strength
+red_strength = red_strength - (2 * red_speed)
+blue_strength = blue_strength - (2 * blue_speed)
+
+
+print ("Time is",time)
+print ("Red strength is {}, energy is {}, speed is {}, location is {}.".format(red_strength, red_energy, red_speed, field_red))
+print ("Blue strength is {}, energy is {}, speed is {}, location is {}.\n".format(blue_strength, blue_energy, blue_speed, field_blue))
+
+# add one to time
+time = time + 1
+
+# add the speed of each warrior to its location
+field_red = field_red + red_speed 
+field_blue = field_blue + blue_speed
+
+#subtract the square of each warrior’s speed from its energy
+red_energy = red_energy - (red_speed ** 2)
+blue_energy = blue_energy - (blue_speed ** 2)
+
+#subtract twice the warrior’s speed from its strength
+red_strength = red_strength - (2 * red_speed)
+blue_strength = blue_strength - (2 * blue_speed)
+
+
+print ("Time is",time)
+print ("Red strength is {}, energy is {}, speed is {}, location is {}.".format(red_strength, red_energy, red_speed, field_red))
+print ("Blue strength is {}, energy is {}, speed is {}, location is {}.\n".format(blue_strength, blue_energy, blue_speed, field_blue))
+
+# add one to time
+time = time + 1
+
+# add the speed of each warrior to its location
+field_red = field_red + red_speed 
+field_blue = field_blue + blue_speed
+
+#subtract the square of each warrior’s speed from its energy
+red_energy = red_energy - (red_speed ** 2)
+blue_energy = blue_energy - (blue_speed ** 2)
+
+#subtract twice the warrior’s speed from its strength
+red_strength = red_strength - (2 * red_speed)
+blue_strength = blue_strength - (2 * blue_speed)
+
+
+print ("Time is",time)
+print ("Red strength is {}, energy is {}, speed is {}, location is {}.".format(red_strength, red_energy, red_speed, field_red))
+print ("Blue strength is {}, energy is {}, speed is {}, location is {}.\n".format(blue_strength, blue_energy, blue_speed, field_blue))
+
+# add one to time
+time = time + 1
+
+# add the speed of each warrior to its location
+field_red = field_red + red_speed 
+field_blue = field_blue + blue_speed
+
+#subtract the square of each warrior’s speed from its energy
+red_energy = red_energy - (red_speed ** 2)
+blue_energy = blue_energy - (blue_speed ** 2)
+
+#subtract twice the warrior’s speed from its strength
+red_strength = red_strength - (2 * red_speed)
+blue_strength = blue_strength - (2 * blue_speed)
+
+
+print ("Time is",time)
+print ("Red strength is {}, energy is {}, speed is {}, location is {}.".format(red_strength, red_energy, red_speed, field_red))
+print ("Blue strength is {}, energy is {}, speed is {}, location is {}.\n".format(blue_strength, blue_energy, blue_speed, field_blue))
+
+# add one to time
+time = time + 1
+
+# add the speed of each warrior to its location
+field_red = field_red + red_speed 
+field_blue = field_blue + blue_speed
+
+#subtract the square of each warrior’s speed from its energy
+red_energy = red_energy - (red_speed ** 2)
+blue_energy = blue_energy - (blue_speed ** 2)
+
+#subtract twice the warrior’s speed from its strength
+red_strength = red_strength - (2 * red_speed)
+blue_strength = blue_strength - (2 * blue_speed)
+
+
+print ("Time is",time)
+print ("Red strength is {}, energy is {}, speed is {}, location is {}.".format(red_strength, red_energy, red_speed, field_red))
+print ("Blue strength is {}, energy is {}, speed is {}, location is {}.\n".format(blue_strength, blue_energy, blue_speed, field_blue))
+
+# add one to time
+time = time + 1
+
+# add the speed of each warrior to its location
+field_red = field_red + red_speed 
+field_blue = field_blue + blue_speed
+
+#subtract the square of each warrior’s speed from its energy
+red_energy = red_energy - (red_speed ** 2)
+blue_energy = blue_energy - (blue_speed ** 2)
+
+#subtract twice the warrior’s speed from its strength
+red_strength = red_strength - (2 * red_speed)
+blue_strength = blue_strength - (2 * blue_speed)
+
+print("Whew")
+
+# End Program
